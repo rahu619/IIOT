@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "IIOT.Simulator": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
