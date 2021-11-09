@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.11" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.11.1" />
+    <PackageReference Include="MQTTnet.AspNetCore" Version="3.1.0" />
+    <PackageReference Include="MQTTnet.AspNetCore.AttributeRouting" Version="0.3.16" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IIOT.MessageConsumer.Data\IIOT.MessageConsumer.Data.csproj" />
+    <ProjectReference Include="..\IIOT.MessageConsumer.Service\IIOT.MessageConsumer.Service.csproj" />
+    <ProjectReference Include="..\IIOT.MessageConsumer\IIOT.MessageConsumer.csproj" />
+  </ItemGroup>
+
+</Project>

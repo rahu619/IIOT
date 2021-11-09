@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "IIOT.MessageBroker": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

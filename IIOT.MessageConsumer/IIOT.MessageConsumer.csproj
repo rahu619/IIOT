@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
+    <PackageReference Include="MQTTnet" Version="3.0.17" />
+    <PackageReference Include="MQTTnet.Extensions.ManagedClient" Version="3.0.17" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IIOT.MessageConsumer.Data\IIOT.MessageConsumer.Data.csproj" />
+    <ProjectReference Include="..\IIOT.MessageConsumer.Service\IIOT.MessageConsumer.Service.csproj" />
+  </ItemGroup>
+
+</Project>

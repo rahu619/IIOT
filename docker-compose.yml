@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  iiot.api:
+    image: ${DOCKER_REGISTRY-}iiotapi
+    build:
+      context: .
+      dockerfile: IIOT.API/Dockerfile
+    ports:
+      -  "8000:80"
+    depends_on:
+      -  iiot.messagebroker
+
+  iiot.messagebroker:
+    image: ${DOCKER_REGISTRY-}iiotmessagebroker
+    build:
+      context: .
+      dockerfile: IIOT.MessageBroker/Dockerfile
+    ports:
+      -  "1844:1844"
+
+  iiot.simulator:
+    image: ${DOCKER_REGISTRY-}iiotsimulator
+    build:
+      context: .
+      dockerfile: IIOT.Simulator/Dockerfile
+    depends_on:
+      -  iiot.messagebroker
+
