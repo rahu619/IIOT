@@ -17,7 +17,28 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IIOT.MessageConsumer.Servic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IIOT.MessageConsumer", "IIOT.MessageConsumer\IIOT.MessageConsumer.csproj", "{FD84C4E3-9DAA-4646-8ED3-288823FD7EE3}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{F531CEAE-3C56-4754-ABD0-4C9D46C38494}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "IIOT.UI", "IIOT.UI\", "{43FB2311-1736-499D-AEB0-8F40E987C2DB}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_32143"
+		Debug.AspNetCompiler.PhysicalPath = "IIOT.UI\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_32143\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_32143"
+		Release.AspNetCompiler.PhysicalPath = "IIOT.UI\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_32143\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "32143"
+		SlnRelativePath = "IIOT.UI\"
+	EndProjectSection
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{844C1BEB-FD00-4E5C-8179-C05A011B35F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,10 +74,14 @@ Global
 		{FD84C4E3-9DAA-4646-8ED3-288823FD7EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD84C4E3-9DAA-4646-8ED3-288823FD7EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD84C4E3-9DAA-4646-8ED3-288823FD7EE3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F531CEAE-3C56-4754-ABD0-4C9D46C38494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F531CEAE-3C56-4754-ABD0-4C9D46C38494}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F531CEAE-3C56-4754-ABD0-4C9D46C38494}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F531CEAE-3C56-4754-ABD0-4C9D46C38494}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43FB2311-1736-499D-AEB0-8F40E987C2DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43FB2311-1736-499D-AEB0-8F40E987C2DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43FB2311-1736-499D-AEB0-8F40E987C2DB}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{43FB2311-1736-499D-AEB0-8F40E987C2DB}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{844C1BEB-FD00-4E5C-8179-C05A011B35F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{844C1BEB-FD00-4E5C-8179-C05A011B35F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{844C1BEB-FD00-4E5C-8179-C05A011B35F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{844C1BEB-FD00-4E5C-8179-C05A011B35F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

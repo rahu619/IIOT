@@ -3,11 +3,8 @@ using IIOT.MessageBroker.Service;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using MQTTnet;
-using MQTTnet.Protocol;
-using MQTTnet.Server;
 using System;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace IIOT.MessageBroker
@@ -36,11 +33,11 @@ namespace IIOT.MessageBroker
             var service = serviceProvider.GetRequiredService<IBrokerService>();
             await service.Start();
 
-            // keep application running until user press a key
-            Console.ReadLine();
+            await Task.Run(() => Thread.Sleep(Timeout.Infinite));
+            //Console.ReadKey();
 
-            await service.Stop();
-            logger.LogInformation("Stopping IIOT Message Broker.");
+            //await service.Stop();
+            //logger.LogInformation("Stopping IIOT Message Broker.");
 
         }
 

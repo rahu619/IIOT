@@ -4,7 +4,7 @@
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
       "serviceActions": {
-        "iiot.api": "DoNotStart",
+        //"iiot.api": "DoNotStart",
         "iiot.messagebroker": "StartDebugging",
         "iiot.simulator": "StartDebugging"
       }

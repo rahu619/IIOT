@@ -4,6 +4,7 @@ using IIOT.Simulator.Messaging.Send;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
 
 class Program
 {
@@ -13,7 +14,7 @@ class Program
             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: false)
             .Build();
 
-        var simulatorSection = Configuration.GetRequiredSection(nameof(SimulatorConfiguration));
+        var simulatorSection = Configuration.GetSection(nameof(SimulatorConfiguration));
         var sensorSection = simulatorSection.GetSection(nameof(SensorConfiguration));
         var senderSection = simulatorSection.GetSection(nameof(MessageSenderConfiguration));
 

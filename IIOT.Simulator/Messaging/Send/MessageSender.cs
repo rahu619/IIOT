@@ -6,6 +6,9 @@ using MQTTnet.Client;
 using MQTTnet.Client.Connecting;
 using MQTTnet.Client.Disconnecting;
 using MQTTnet.Client.Options;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace IIOT.Simulator.Messaging.Send
 {
@@ -30,11 +33,10 @@ namespace IIOT.Simulator.Messaging.Send
 
         }
 
-        private void SensorFailureEvent(object state)
+        public virtual void SensorFailureEvent(object state)
         {
             _logger.LogError("Error retrieving value from sensor!");
         }
-
 
         public async Task SensorMessageReceived(string value)
         {
@@ -68,11 +70,12 @@ namespace IIOT.Simulator.Messaging.Send
             {
                 try
                 {
-                    await _mqttClient.ConnectAsync(ClientOptions).WaitAsync(CancellationToken.None);
+                    await _mqttClient.ConnectAsync(ClientOptions); //.Wait(CancellationToken.None);
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError("Error connecting to message broker!");
+                    _logger.LogError("Error connecting to the message broker.");
+                    _logger.LogError("Error connecting to server:{Server} and port:{Port} ", _configuration.Server, _configuration.Port);
                 }
             }
         }
@@ -84,28 +87,6 @@ namespace IIOT.Simulator.Messaging.Send
                                                     .WithCleanSession(false)
                                                     //.WithTls()
                                                     .Build();
-
-        //new MqttClientOptions
-        //{
-        //    ClientId = Guid.NewGuid().ToString("D"),
-        //    ProtocolVersion = MqttProtocolVersion.V500,
-        //    ChannelOptions = new MqttClientTcpOptions
-        //    {
-        //        Server = _configuration.Server,
-        //        Port = _configuration.Port
-        //    },
-        //    Credentials = new MqttClientCredentials
-        //    {
-        //        //TODO: dotnet secret manager
-        //        Username = _configuration.Username,
-        //        Password = Encoding.UTF8.GetBytes(_configuration.Password)
-        //    },
-        //    CleanSession = true,
-        //    KeepAlivePeriod = TimeSpan.FromSeconds(60)
-        //};
-
-
-
 
         #region Events
         public void OnConnected(MqttClientConnectedEventArgs obj)

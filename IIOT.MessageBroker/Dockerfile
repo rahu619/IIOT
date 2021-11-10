@@ -2,7 +2,6 @@
 
 FROM mcr.microsoft.com/dotnet/runtime:5.0 AS base
 WORKDIR /app
-EXPOSE 1844
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
@@ -18,5 +17,6 @@ RUN dotnet publish "IIOT.MessageBroker.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
+EXPOSE 1844
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "IIOT.MessageBroker.dll"]

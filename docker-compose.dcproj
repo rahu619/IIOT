@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>f531ceae-3c56-4754-abd0-4c9d46c38494</ProjectGuid>
+    <ProjectGuid>844c1beb-fd00-4e5c-8179-c05a011b35f5</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
     <DockerServiceName>iiot.api</DockerServiceName>

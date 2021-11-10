@@ -21,13 +21,13 @@ connection.on("ReceiveMessage", (temperature) => {
   console.log(`Received temperature: ${temperature.value}`);
 
   temperatureArr.push(temperature);
-  //taking the latest alone
+  //taking the 'N' values latest alone
   let latestTemperatureArr = temperatureArr.slice(
     Math.max(temperatureArr.length - n_values, 0)
   );
   let valueArr = latestTemperatureArr.map((a) => a.value.replace(/\D+$/g, ""));
-  let TimeArr = latestTemperatureArr.map(
-    (a) => Date.parse(a.receivedTime) / 1000
+  let TimeArr = latestTemperatureArr.map((a) =>
+    new Date(a.receivedTime).toLocaleTimeString()
   );
 
   RenderChart(TimeArr, valueArr);

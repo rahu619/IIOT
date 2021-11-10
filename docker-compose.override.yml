@@ -1,15 +1,14 @@
-version: '3.4'
-
+version: "3.4"
 services:
-  iiot.api:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-      - "80"
+  iiot.simulator:
 
   iiot.messagebroker:
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
 
-  iiot.simulator:
+  iiot.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
 

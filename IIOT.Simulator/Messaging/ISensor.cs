@@ -1,4 +1,6 @@
-﻿namespace IIOT.Simulator.Messaging
+﻿using System.Threading.Tasks;
+
+namespace IIOT.Simulator.Messaging
 {
     public interface ISensor
     {

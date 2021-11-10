@@ -1,6 +1,8 @@
 ﻿using IIOT.Simulator.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using System;
+using System.Threading.Tasks;
 
 namespace IIOT.Simulator.Messaging
 {
