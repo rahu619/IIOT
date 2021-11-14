@@ -12,6 +12,7 @@ class Program
     {
         IConfiguration Configuration = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: false)
+            .AddEnvironmentVariables()
             .Build();
 
         var simulatorSection = Configuration.GetSection(nameof(SimulatorConfiguration));

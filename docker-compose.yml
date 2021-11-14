@@ -1,4 +1,4 @@
-version: '3.4'
+version: "3.4"
 
 services:
   iiot.messagebroker:
@@ -7,21 +7,23 @@ services:
       context: .
       dockerfile: IIOT.MessageBroker/Dockerfile
     ports:
-        - "1844:1844"  
+      - "1844:1844"
     networks:
-        - webproxy
-  
+      - webproxy
+
   iiot.simulator:
     image: ${DOCKER_REGISTRY-}iiotsimulator
     environment:
-        - ASPNETCORE_ENVIRONMENT=docker
+      - ASPNETCORE_ENVIRONMENT=docker
     build:
       context: .
       dockerfile: IIOT.Simulator/Dockerfile
-    depends_on: 
-        - iiot.messagebroker
+    depends_on:
+      - iiot.messagebroker
     networks:
-        - webproxy
+      - webproxy
+    env_file:
+      - IIOT.Simulator/.env
 
   iiot.api:
     image: ${DOCKER_REGISTRY-}iiotapi
@@ -29,12 +31,19 @@ services:
       context: .
       dockerfile: IIOT.API/Dockerfile
     networks:
-        - webproxy
+      - webproxy
     ports:
-        - "5000:5000"     
+      - "5000:5000"
+
+  iiot.ui:
+    image: nginx
+    ports:
+      - 8000:80
+    volumes:
+      - ./IIOT.UI:/usr/share/nginx/html
+    depends_on:
+      - iiot.api
 
 networks:
   webproxy:
     driver: bridge
-
-

@@ -1,7 +1,10 @@
 {
   "profiles": {
     "IIOT.Simulator": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "environmentVariables": {
+        "MessageSenderConfiguration:Password": "*"
+      }
     },
     "Docker": {
       "commandName": "Docker"
